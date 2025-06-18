@@ -15,25 +15,27 @@
 }
 
 .home {
-  background-color: white;
-  height: 1000px;
+  
+  height: auto;
+  min-height: 100vh;
 }
 
 .about {
   position: relative;
   background-color: transparent;
-  height: 1200px;
+  height: 100vh;
 }
 
 .projects {
-  background-color: white;
-  height: 1200px;
+ 
+  height: auto;
+  min-height: 100vh;
 }
 
 .contact {
   position: relative;
   background-color: transparent;
-  height: 1000px;
+  height: 100vh;
 }
 
 .object-cover {
