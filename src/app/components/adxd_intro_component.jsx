@@ -18,11 +18,11 @@ export default function AdxdIntro() {
 
   return (
     <div className="w-full">
-      <div className={'font-roboto font-semibold text-16 lg:text-24 tracking-neg lg:leading-[20px] mr-2' + (darkMode ? ' text-lightVerde':' text-verde')}>Hey, I'm </div>
-      <div className='font-extrabold  text-32 md:text-56 lg:text-80 tracking-neg lg:leading-[110px]'><span className='font-roboto'>Ivory Brown</span><span className={(darkMode ? ' text-lightVerde':' text-verde')}>.</span></div>
-      <h1 className="text-left text-xl md:text-3xl font-extrabold flex items-baseline">
+      <h1 className="text-left text-2xl md:text-4xl font-extrabold flex items-baseline">
        
-        <span>ADXD</span>
+        <span className="text-2xl md:text-4xl font-extrabold bg-gradient-to-r from-purple-500 via-green-400 to-pink-500 bg-clip-text text-transparent">
+          ADXD
+        </span>
         <AnimatePresence mode="wait">
           <motion.span
             key={isDesigner ? 'designer' : 'developer'}
@@ -33,35 +33,12 @@ export default function AdxdIntro() {
             className={"flex items-baseline gap-1"  + (isDesigner ?  (darkMode ? " text-vibPurp": " text-purp"): (darkMode ? " text-lightRoyal": " text-royal"))}
           >
             {/* <span className="text-4xl md:text-6xl font-extrabold">D</span> */}
-            <span className="text-l md:text-2xl font-bold">{isDesigner ? 'esigner' : 'eveloper'}</span>
+            <span className="text-l md:text-xl font-bold">{isDesigner ? 'esigner' : 'eveloper'}</span>
           </motion.span>
         </AnimatePresence>
       </h1>
       
-      <p className={"text-left text-sm md:text-lg max-w-xl" + (darkMode ? " text-gray-500": " text-gray")} >
-        Attention Deficit Experience {isDesigner ? 'Designer' : 'Developer'}.
-        A creative technologist who designs and builds for brains that zig when others zag.
-      </p>
-
-      <div className="mt-8 space-y-5 text-left text-sm md:text-lg">
-        {[
-          { icon: '🧠', text: 'I design and build tools that work with distracted brains, not against them.' },
-          { icon: '💡', text: 'From design systems to AI workflows, I specialize in frictionless clarity.' },
-          { icon: '🛠️', text: 'ADHD isn’t a barrier—it’s my design superpower.' },
-        ].map((line, i) => (
-          <motion.div
-            key={line.text}
-            className="flex items-start gap-2 leading-[1.6]"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.0 + i * 0.2 }}
-            viewport={{ once: true }}
-          >
-            <span className="text-lg md:text-2xl">{line.icon}</span>
-            <p>{line.text}</p>
-          </motion.div>
-        ))}
-      </div>
+      
     </div>
   );
 }

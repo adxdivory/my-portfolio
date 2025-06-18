@@ -26,7 +26,7 @@ export default function AboutMeConstellation() {
         <div className="hidden  md:block relative mx-auto w-[500px] h-[500px] flex items-center justify-center">
           {/* Center Bubble */}
           <div
-            className={"z-10 bg-opacity-80 rounded-full shadow-md w-[150px] h-[150px] flex items-center justify-center text-center font-bold text-lg" + (darkMode ? "white bg-black":"text-primary bg-white")}
+            className={"z-10 bg- rounded-full shadow-md w-[150px] h-[150px] flex items-center justify-center text-center  font-bold text-lg" + (darkMode ? " text-lightRoyal bg-black":" text-royal bg-white")}
             style={{
               position: 'absolute',
               left: '50%',
@@ -48,7 +48,7 @@ export default function AboutMeConstellation() {
               <motion.div
                 key={bubble.id}
                 onClick={() => setSelected(bubble.id)}
-                className={`absolute bg-opacity-80 cursor-pointer w-[150px] h-[150px] flex items-center justify-center rounded-full text-sm text-center shadow-md z-20 transition-all duration-300 ${
+                className={`absolute cursor-pointer w-[150px] h-[150px] flex items-center justify-center rounded-full text-sm text-center shadow-md z-20 transition-all duration-300 ${
                   isSelected ? 'ring-4 ring-green-400' : ''
                 } ${darkMode ? ' white bg-black':' text-primary bg-white'}`}
                 style={{
