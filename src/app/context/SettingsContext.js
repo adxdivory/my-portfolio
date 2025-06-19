@@ -48,7 +48,7 @@ useEffect(() => {
   } else {
     document.documentElement.classList.remove('dark');
   }
-}, []);
+}, [state.darkMode]);
 
 useEffect(() => {
   localStorage.setItem('darkMode', state.darkMode);

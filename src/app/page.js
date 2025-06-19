@@ -38,7 +38,7 @@ export default function Home() {
             <div className=' mt-[150px] md:mt-[200px] flex flex-row text-left gap-[10px] md:gap-[20px]'>
               
               <div className="flex flex-col text-left">
-              <div className={'font-roboto font-semibold text-14 lg:text-20 tracking-neg lg:leading-[20px] mr-2 mb-4' + (darkMode ? ' text-lightVerde':' text-verde')}>Hi, I'm </div>
+              <div className={'font-roboto font-semibold text-14 lg:text-20 tracking-neg lg:leading-[20px] mr-2 mb-4' + (darkMode ? ' text-lightVerde':' text-verde')}>Hi, I&rsquo;m </div>
               <AdxdIntro/>
               <div className='font-extrabold  text-48 md:text-56 lg:text-96  lg:leading-[110px]'><span className='font-roboto'>Ivory</span><span className={(darkMode ? ' text-lightVerde':' text-verde')}>.</span></div>
                   <p className="text-left text-sm md:text-lg max-w-xl mt-10">
