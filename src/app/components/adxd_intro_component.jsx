@@ -18,7 +18,7 @@ export default function AdxdIntro() {
 
   return (
     <div className="w-full">
-      <h1 className="text-left text-2xl md:text-4xl font-extrabold flex items-baseline">
+      <h1 className="text-2xl md:text-4xl font-extrabold flex items-center">
        
         <span className="text-2xl md:text-4xl font-extrabold bg-gradient-to-r from-purple-500 via-green-400 to-pink-500 bg-clip-text text-transparent">
           ADXD
