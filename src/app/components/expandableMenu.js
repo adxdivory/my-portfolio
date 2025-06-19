@@ -5,7 +5,6 @@ import { Home, User, Eye, Mail } from 'lucide-react';
 
 import '../globals.css'
 
-import './ExpandableMenu.scss'
 
 import { useSettings } from "../context/SettingsContext";
 
