@@ -5,6 +5,7 @@ import ExpandableMenu from "./components/expandableMenu";
 import "./globals.css";
 import profile from '../../public/assets/ani-profile-21.png'
 import SettingsMenu from "./components/SettingsMenu.js";
+import logoicon from "../../public/assets/logo.PNG"
 
 import { motion } from 'framer-motion';
 
@@ -27,6 +28,20 @@ export default function Home() {
 
   return (
     <div className={styles.page + (darkMode ? ' bg-black':' bg-white')}>
+       <div className="relative flex flex-col justify-center top-[30px] left-[45%] md:top-[50px] md:left-[30px]">
+        <Image
+                src={logoicon}
+                alt="adxdivory logo"
+                className="object-fit w-[30px] h-[40px] md:w-[50px] md:h-[60px]"
+        />
+        <div className={"text-sm md:text-xl" + (darkMode ? ' text-primaryD':' text-primary')}>
+        <span className=" bg-gradient-to-r from-purple-500 via-green-400 to-pink-500 bg-clip-text text-transparent">
+          adxd
+        </span>ivory
+        </div>
+
+       </div>
+       
       <SettingsMenu />
       <ExpandableMenu className={styles.menu} />
       <main className={styles.main + (darkMode ? ' text-primaryD':' text-primary')}>
@@ -47,9 +62,12 @@ export default function Home() {
                 <span className="font-roboto">Ivory Brown</span>
                 <span className={darkMode ? ' text-lightVerde' : ' text-verde'}>.</span>
               </div>
-              <AdxdIntro />
+              <div className="text-xl md:text-3xl bg-gradient-to-r from-purple-500 via-green-400 to-pink-500 bg-clip-text text-transparent">
+              Design Technologist
+              </div>
+              {/* <AdxdIntro /> */}
               <p className="text-sm md:text-base lg:text-lg max-w-xl">
-                I’m a design technologist with 6+ years of experience crafting thoughtful systems, AI-powered tools, and inclusive interfaces. I specialize in UX engineering, design systems, motion design, and human-centered problem solving that scales with clarity—not complexity.
+                I have 6+ years of experience crafting thoughtful systems, AI-powered tools, and inclusive interfaces. I specialize in UX engineering, design systems, motion design, and human-centered problem solving that scales with clarity—not complexity.
               </p>
             </motion.div>
 
