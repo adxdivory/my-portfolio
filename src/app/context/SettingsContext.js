@@ -1,7 +1,8 @@
 "use client";
-import React, { useEffect, useContext, createContext, useReducer } from 'react';
+import React, { useEffect, useContext, createContext, useReducer, useState } from 'react';
 
 // Action types
+const SET_DARK_MODE = 'SET_DARK_MODE';
 const TOGGLE_DARK_MODE = 'TOGGLE_DARK_MODE';
 const TOGGLE_REDUCE_MOTION = 'TOGGLE_REDUCE_MOTION';
 
@@ -14,6 +15,8 @@ const initialState = {
 // Reducer function
 function settingsReducer(state, action) {
   switch (action.type) {
+    case SET_DARK_MODE:
+      return { ...state, darkMode: action.payload };
     case TOGGLE_DARK_MODE:
       return { ...state, darkMode: !state.darkMode };
     case TOGGLE_REDUCE_MOTION:
@@ -29,33 +32,41 @@ const SettingsContext = createContext();
 // Context provider
 export function SettingsProvider({ children }) {
   const [state, dispatch] = useReducer(settingsReducer, initialState);
+  const [hasMounted, setHasMounted] = useState(false);
 
   // Toggle functions
   const toggleDarkMode = () => dispatch({ type: TOGGLE_DARK_MODE });
   const toggleReduceMotion = () => dispatch({ type: TOGGLE_REDUCE_MOTION });
 
+  // Read saved preferences on first mount
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+    const savedReduceMotion = localStorage.getItem('reduceMotion') === 'true';
 
-// Apply dark mode class to the document root and persist in localStorage
-useEffect(() => {
-  const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-  const savedReduceMotion = localStorage.getItem('reduceMotion') === 'true';
+    dispatch({ type: SET_DARK_MODE, payload: savedDarkMode });
+    dispatch({ type: TOGGLE_REDUCE_MOTION, payload: savedReduceMotion }); // Or set a specific action
 
-  dispatch({ type: TOGGLE_DARK_MODE, payload: savedDarkMode });
-  dispatch({ type: TOGGLE_REDUCE_MOTION, payload: savedReduceMotion });
+    setHasMounted(true);
+  }, []);
 
-  if (state.darkMode) {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-}, [state.darkMode]);
+  // Update document class based on dark mode
+  useEffect(() => {
+    if (!hasMounted) return;
+    if (state.darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [state.darkMode, hasMounted]);
 
-useEffect(() => {
-  localStorage.setItem('darkMode', state.darkMode);
-  localStorage.setItem('reduceMotion', state.reduceMotion);
-}, [state.darkMode, state.reduceMotion]);
+  // Persist settings in localStorage
+  useEffect(() => {
+    if (hasMounted) {
+      localStorage.setItem('darkMode', state.darkMode);
+      localStorage.setItem('reduceMotion', state.reduceMotion);
+    }
+  }, [state.darkMode, state.reduceMotion, hasMounted]);
 
-  // Use a simplified value structure
   const value = {
     darkMode: state.darkMode,
     reduceMotion: state.reduceMotion,
@@ -69,7 +80,6 @@ useEffect(() => {
     </SettingsContext.Provider>
   );
 }
-
 
 // Export the context directly in case it is needed
 export { SettingsContext };
