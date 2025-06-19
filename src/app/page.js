@@ -118,9 +118,9 @@ export default function Home() {
         </section>
 
         <section id="adxd" className={styles.sections + ' relative overflow-hidden bg-fixed bg-center bg-cover min-h-screen flex items-center justify-center ' + (darkMode 
-  ? 'bg-[url("/assets/pattern-dark.svg")] bg-[#0a0a0a] text-white'
-  : 'bg-[url("/assets/pattern-light.svg")] bg-[#f9f9f9] text-black')}>
-          <div className={"relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 max-w-md sm:max-w-3xl rounded-xl shadow-lg " + (darkMode ? " bg-containerDark" : " bg-containerLight")}>
+  ? 'bg-[url("/assets/pattern-dark.svg")] bg-[#0a0a0a] bg-[length:150px_150px] sm:bg-[length:200px_200px] md:bg-[length:250px_250px] text-white'
+  : 'bg-[url("/assets/pattern-light.svg")] bg-[#f9f9f9] bg-[length:150px_150px] sm:bg-[length:200px_200px] md:bg-[length:250px_250px] text-black')}>
+          <div className={"relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 max-w-sm sm:max-w-lg rounded-xl shadow-lg " + (darkMode ? " bg-containerDark" : " bg-containerLight")}>
             {/* Decorative Background */}
             <motion.div 
               initial={{ opacity: 0 }}
@@ -169,7 +169,7 @@ export default function Home() {
         <section id="about" className={styles.sections + ' ' + styles.about + ' relative overflow-hidden min-h-screen ' + (darkMode 
   ? 'bg-gradient-to-b from-[#141414] via-[#1c1c1c] to-[#2a2a2a]'
   : 'bg-gradient-to-br from-gray-100 via-indigo-100 to-blue-100 text-black')}>
-          <div className="relative z-10 pt-32 md:pt-24 w-full text-white text-center">
+          <div className="relative z-10 pt-10 md:pt-12 w-full text-white text-center">
             <AboutMeConstellation />
           </div>
         </section>
@@ -182,8 +182,8 @@ export default function Home() {
 
 
         <section id="contact" className={styles.sections + ' ' + styles.contact + ' relative overflow-hidden bg-fixed bg-center bg-cover min-h-screen flex items-center justify-center ' + (darkMode 
-  ? 'bg-[url("/assets/pattern-dark.svg")] bg-[#0a0a0a] text-white'
-  : 'bg-[url("/assets/pattern-light.svg")] bg-[#f9f9f9] text-black')}>
+  ? 'bg-[url("/assets/pattern-dark.svg")] bg-[#0a0a0a] bg-[length:150px_150px] sm:bg-[length:200px_200px] md:bg-[length:250px_250px] text-white'
+  : 'bg-[url("/assets/pattern-light.svg")] bg-[#f9f9f9] bg-[length:150px_150px] sm:bg-[length:200px_200px] md:bg-[length:250px_250px] text-black')}>
           <div className={"relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 max-w-md sm:max-w-3xl rounded-xl shadow-lg " + (darkMode ? " bg-containerDark" : " bg-containerLight")}>
             {/* Decorative Background */}
             <motion.div 
