@@ -5,14 +5,14 @@ import { useInView } from 'react-intersection-observer';
 import { useSettings } from '../context/SettingsContext.js';
 
 const bubbles = [
-  { id: 'ai', label: 'AI for a better life', icon: '🤖', description: 'Exploring how AI can enhance everyday tasks and human well-being.' },
-  { id: 'inclusion', label: 'Accessible & Inclusive Design', icon: '🧩', description: 'I specialize in accessibility-first design, ensuring digital experiences work for all users. I believe inclusive design leads to more intuitive solutions for everyone.' },
-  { id: 'neuro', label: 'Neuro-spicy Warrior', icon: '🌶', description: 'A proud advocate for neurodivergent voices in tech, design, and everyday life.' },
-  { id: 'bigpicture', label: 'The Big Picture', icon: '👩🏽‍💻', description: 'Zooming out to understand systems, structures, and long-term impact.' },
-  { id: 'personal', label: 'Flying + Travel + Family', icon: '🌎🌱👩🏽‍🍼', description: 'Life beyond work: adventure, growth, and raising a kind human.' },
-  { id: 'dog', label: 'Furry Coworker', icon: '🐶', description: 'Always nearby for a snuggle or a walk break.' },
-  { id: 'mom', label: 'Mom Mode', icon: '🧑🏽‍🍼', description: 'Balancing late-night feedings with big ideas.' },
-  { id: 'bridge', label: 'Bridging Worlds', icon: '🌉', description: 'Connecting design, tech, people, and perspectives.' },
+  { id: 'ai', label: 'AI for a More Human Experience', icon: '🤖', description: 'I see AI as more than just a tool—it’s an opportunity to give people back time for the things that truly matter. My work focuses on leveraging AI to reduce digital friction and make everyday tasks smarter, smoother, and more human.' },
+  { id: 'inclusion', label: 'Accessible & Inclusive Design', icon: '🧩', description: 'I specialize in accessibility-first design, ensuring that digital experiences work for all users, not just the average user. My approach is rooted in the belief that designing with inclusivity in mind leads to better, more intuitive solutions for everyone.' },
+  { id: 'neuro', label: 'Neuro-spicy Warrior', icon: '🌶', description: 'A proud advocate for neurodivergent voices in tech, design, and everyday life. As a neurodivergent designer and developer, I’m passionate about creating experiences that engage, empower, and support those who think differently. I believe designing for ADHD and other neurodivergent minds leads to better experiences for everyone.' },
+  { id: 'personal', label: 'Flying + Travel + Family', icon: '🌎🌱🏂🏽', description: 'Life beyond work: adventure, growth, and experience. When I’m not designing or coding, you’ll find me snowboarding, exploring new places, baking or chasing other creative outlets. I believe a well-rounded life fuels better, more thoughtful design.' },
+  { id: 'dog', label: 'Furry Coworker', icon: '🐶', description: 'I share my life with a gentle giant—a Great Dane named Blue Barry who reminds me daily of the importance of joy, patience, and making space for the things (and pets) we love. Update: Unfortunately, my oversized furry baby passed away on March 28th, 2025. He will; be forever missed.' },
+  { id: 'mom', label: 'Mom Mode', icon: '🧑🏽‍🍼', description: 'Becoming a mom has given me a new lens on design, efficiency, and balance. I’m passionate about building products that simplify life, so we can spend less time on the mundane and more time being present with the people we love.' },
+  { id: 'bridge', label: 'Bay Area Native', icon: '🌉', description: 'I grew up in the Bay Area, where I saw the magic of Silicon Valley up close—innovation, ambition, and world-changing ideas everywhere. But while attending high school in East Palo Alto, I also witnessed the stark gap in access and opportunity shaped by socioeconomic status. That contrast fuels my passion for tech equity and designing tools that create real opportunities for those too often left out of the conversation.' },
+  { id: 'bigpicture', label: 'The Big Picture', icon: '👩🏽‍💻', description: 'I’m not just designing for today—I’m building for a future where technology feels like a helping hand, not a burden. My goal is to create meaningful, intuitive, and human-centered experiences that make life a little easier for everyone.' }
 ];
 
 export default function AboutMeConstellation() {
