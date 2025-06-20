@@ -215,8 +215,8 @@ export default function Home() {
         </section>
         
       </main>
-      <footer className={styles.footer}>
-     
+      <footer className={styles.footer + " text-xs text-center py-6 " + (darkMode ? "text-gray-400" : "text-gray-600")}>
+        © {new Date().getFullYear()} Designed and built by Ivory Brown. All rights reserved.
       </footer>
     </div>
   );
