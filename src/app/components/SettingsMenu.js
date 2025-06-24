@@ -69,7 +69,7 @@ export default function SettingsMenu() {
 
         // </div>
 
-        <div className="fixed bottom-4 right-4 z-50">
+        <div className={`fixed top-[90%] left-5 md:top-10 md:left-[50%] z-50 p-2 opacity-50  rounded-full ${darkMode? 'bg-containerDark':'bg-containerLight'}`}>
             <div
                 onClick={toggleDarkMode}
                 className="cursor-pointer opacity-60 hover:opacity-100 transition-opacity duration-300"

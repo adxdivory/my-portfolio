@@ -10,8 +10,8 @@ import { useSettings } from "../context/SettingsContext";
 
 const sections = [
   { name: 'Home', icon: <Home className='h-[20px] w-[20px] lg:h-[30px] lg:w-[30px]' />, id: 'home' },
-  { name: 'Projects', icon: <Eye className='h-[20px] w-[20px] lh:h-[30px] lg:w-[30px]' />, id: 'projects' },
   { name: 'About me', icon: <User className='h-[20px] w-[20px] lg:h-[30px] lg:w-[30px]' />, id: 'about' },
+  { name: 'Projects', icon: <Eye className='h-[20px] w-[20px] lh:h-[30px] lg:w-[30px]' />, id: 'projects' },
   { name: 'Contact', icon: <Mail  className='h-[20px] w-[20px] lg:h-[30px] lg:w-[30px]'/>, id: 'contact' },
 ];
 

@@ -56,6 +56,12 @@ export default function ProjectGallery() {
 
   return (
     <div className="w-full px-6 md:px-12 py-10">
+      <div className={`mb-6 p-4 rounded-lg text-center text-sm font-medium shadow-md ${darkMode ? 'bg-red-900 text-red-100' : 'bg-red-100 text-red-900'}`}>
+        🚧 This section of my website is still under construction. You can view the full list of upcoming projects below (none are clickable yet), or visit my temporary portfolio here: 
+        <a href="https://www.tinyurl.com/ivoryswork" target="_blank" rel="noopener noreferrer" className="underline hover:text-pink-500 ml-1">
+          www.tinyurl.com/ivoryswork
+        </a>
+      </div>
       <h1 className="text-3xl md:text-4xl font-bold mb-6">Projects</h1>
 
       <div className="flex flex-wrap gap-2 mb-4">

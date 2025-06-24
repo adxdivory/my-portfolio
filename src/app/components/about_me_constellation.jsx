@@ -5,14 +5,14 @@ import { useInView } from 'react-intersection-observer';
 import { useSettings } from '../context/SettingsContext.js';
 
 const bubbles = [
-  { id: 'ai', label: 'AI for a More Human Experience', icon: '🤖', description: 'I see AI as more than just a tool—it’s an opportunity to give people back time for the things that truly matter. My work focuses on leveraging AI to reduce digital friction and make everyday tasks smarter, smoother, and more human.' },
-  { id: 'inclusion', label: 'Accessible & Inclusive Design', icon: '🧩', description: 'I specialize in accessibility-first design, ensuring that digital experiences work for all users, not just the average user. My approach is rooted in the belief that designing with inclusivity in mind leads to better, more intuitive solutions for everyone.' },
-  { id: 'neuro', label: 'Neuro-spicy Warrior', icon: '🌶', description: 'A proud advocate for neurodivergent voices in tech, design, and everyday life. As a neurodivergent designer and developer, I’m passionate about creating experiences that engage, empower, and support those who think differently. I believe designing for ADHD and other neurodivergent minds leads to better experiences for everyone.' },
-  { id: 'personal', label: 'Flying + Travel + Family', icon: '🌎🌱🏂🏽', description: 'Life beyond work: adventure, growth, and experience. When I’m not designing or coding, you’ll find me snowboarding, exploring new places, baking or chasing other creative outlets. I believe a well-rounded life fuels better, more thoughtful design.' },
-  { id: 'dog', label: 'Furry Coworker', icon: '🐶', description: 'I share my life with a gentle giant—a Great Dane named Blue Barry who reminds me daily of the importance of joy, patience, and making space for the things (and pets) we love. Update: Unfortunately, my oversized furry baby passed away on March 28th, 2025. He will; be forever missed.' },
-  { id: 'mom', label: 'Mom Mode', icon: '🧑🏽‍🍼', description: 'Becoming a mom has given me a new lens on design, efficiency, and balance. I’m passionate about building products that simplify life, so we can spend less time on the mundane and more time being present with the people we love.' },
-  { id: 'bridge', label: 'Bay Area Native', icon: '🌉', description: 'I grew up in the Bay Area, where I saw the magic of Silicon Valley up close—innovation, ambition, and world-changing ideas everywhere. But while attending high school in East Palo Alto, I also witnessed the stark gap in access and opportunity shaped by socioeconomic status. That contrast fuels my passion for tech equity and designing tools that create real opportunities for those too often left out of the conversation.' },
-  { id: 'bigpicture', label: 'The Big Picture', icon: '👩🏽‍💻', description: 'I’m not just designing for today—I’m building for a future where technology feels like a helping hand, not a burden. My goal is to create meaningful, intuitive, and human-centered experiences that make life a little easier for everyone.' }
+  { id: 'ai', label: 'AI for a More Human Experience', icon: '🤖', description: 'I see AI as more than just a tool—it’s an opportunity to give people back time for the things that truly matter. My work focuses on leveraging AI to reduce digital friction and make everyday tasks smarter, smoother, and more human.', size: 'w-32 h-32' },
+  { id: 'inclusion', label: 'Accessible & Inclusive Design', icon: '🧩', description: 'I specialize in accessibility-first design, ensuring that digital experiences work for all users, not just the average user. My approach is rooted in the belief that designing with inclusivity in mind leads to better, more intuitive solutions for everyone.', size: 'w-24 h-24' },
+  { id: 'neuro', label: 'ADXD.. What even is that?', icon: '🌶', description: 'It stands for “Attention Deficit Experience Designer/Developer”—my personal shorthand for how I use my ADHD superpowers to create clear, fast, and empathetic applications, design systems and tools. Fast-thinking, fast-making. Driven by instinct, curiosity and empathy. Obsessed with clarity and focus. Iterates quickly, learns faster.', size: 'w-32 h-32' },
+  { id: 'personal', label: 'Flying + Travel + Family', icon: '🌎🌱🏂🏽', description: 'Life beyond work: adventure, growth, and experience. When I’m not designing or coding, you’ll find me snowboarding, exploring new places, baking or chasing other creative outlets. I believe a well-rounded life fuels better, more thoughtful design.', size: 'w-24 h-24' },
+  { id: 'dog', label: 'Furry Coworker', icon: '🐶', description: 'I share my life with a gentle giant—a Great Dane named Blue Barry who reminds me daily of the importance of joy, patience, and making space for the things (and pets) we love. Update: Unfortunately, my oversized furry baby passed away on March 28th, 2025 at 7 years old. He will be forever missed.', size: 'w-24 h-24' },
+  { id: 'mom', label: 'Mom Mode', icon: '🧑🏽‍🍼', description: 'Becoming a mom has given me a new lens on design, efficiency, and balance. I’m passionate about building products that simplify life, so we can spend less time on the mundane and more time being present with the people we love.', size: 'w-32 h-32' },
+  { id: 'bridge', label: 'Bay Area Native', icon: '🌉', description: 'I grew up in the Bay Area, where I saw the magic of Silicon Valley up close—innovation, ambition, and world-changing ideas everywhere. But while attending high school in East Palo Alto, I also witnessed the stark gap in access and opportunity shaped by socioeconomic status. That contrast fuels my passion for tech equity and designing tools that create real opportunities for those too often left out of the conversation.', size: 'w-24 h-24' },
+  { id: 'bigpicture', label: 'The Big Picture', icon: '👩🏽‍💻', description: 'I’m not just designing for today—I’m building for a future where technology feels like a helping hand, not a burden. My goal is to create meaningful, intuitive, and human-centered experiences that make life a little easier for everyone.', size: 'w-32 h-32' }
 ];
 
 export default function AboutMeConstellation() {
@@ -20,68 +20,87 @@ export default function AboutMeConstellation() {
 
   const { darkMode, reduceMotion, toggleDarkMode, toggleReduceMotion } = useSettings();
 
+
   return (
     <div className="w-full flex flex-col items-center justify-center py-12 px-4">
       {/* Title for large screens */}
-      <h2 className={"hidden md:block text-3xl font-bold text-center mb-12 mt-8" + (darkMode ? " text-lightRoyal" : " text-royal")}>
-        About me
-      </h2>
+      <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className={`text-2xl md:text-4xl font-bold mb-4  drop-shadow-lg dark:drop-shadow-md text-center ${darkMode ? 'text-primaryD' : 'text-primary'}`}
+            >
+               About Me.
+            </motion.h2>
       {/* Floating Bubbles Container Wrapper */}
       <div className="relative w-full flex justify-center items-center">
-        <div className="hidden md:flex relative w-[800px] h-[800px] items-center justify-center p-4">
-          {/* Central Rectangle */}
-          <motion.div
-            key={selected}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className={"absolute inset-0 m-auto z-30 rounded-xl shadow-lg px-6 py-4 text-center w-72 h-fit" + (darkMode ? " white bg-black":" text-primary bg-white")}
-          >
-            <h3 className={"font-semibold text-md mb-2" + (darkMode ? " text-lightRoyal":" text-royal")}>
-              {selected ? bubbles.find(b => b.id === selected)?.label : "About me"}
-            </h3>
-            {selected && (
-              <p className="text-sm">
-                {bubbles.find(b => b.id === selected)?.description}
-              </p>
-            )}
-          </motion.div>
-
-          {/* Orbiting Bubbles */}
-          {bubbles.map((bubble, index) => {
-            const angle = (360 / bubbles.length) * index;
-            const baseRadius = 260;
-            const radius = baseRadius + (index % 2 === 0 ? 20 : -20);
-            const x = radius * Math.cos((angle * Math.PI) / 180);
-            const y = radius * Math.sin((angle * Math.PI) / 180);
+        <div className="hidden md:grid grid-cols-6 grid-rows-4 gap-4 max-w-5xl p-4"
+          style={{
+            gridTemplateAreas: `
+              "ai ai inclusion inclusion neuro neuro"
+              "ai ai personal personal dog dog"
+              "mom mom bridge bridge bigpicture bigpicture"
+              "mom mom bridge bridge bigpicture bigpicture"
+            `
+          }}
+        >
+          {bubbles.map((bubble) => {
             const isSelected = selected === bubble.id;
-
+            const baseSizeClasses = bubble.size;
             return (
               <motion.div
                 key={bubble.id}
+                layout
                 onClick={() => setSelected(bubble.id)}
-                className={`absolute cursor-pointer w-[120px] h-[120px] md:w-[140px] md:h-[140px] flex items-center justify-center rounded-full text-sm text-center shadow-md transition-all duration-300 ${
-                  isSelected ? 'ring-4 ring-green-400' : ''
-                } ${
-                  darkMode
-                    ? 'bg-black text-white hover:ring-2 hover:ring-lightRoyal hover:shadow-lg'
-                    : 'bg-white text-primary hover:ring-2 hover:ring-royal hover:shadow-lg'
-                }`}
-                style={{ top: `calc(50% + ${y}px - 70px)`, left: `calc(50% + ${x}px - 70px)` }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                animate={{ y: [0, -12, 0, 12, 0] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 6,
-                  ease: 'easeInOut',
-                  delay: index * 0.3,
+                initial={false}
+                animate={{
+                  width: isSelected ? '16rem' : undefined,
+                  height: isSelected ? 'auto' : undefined,
+                  zIndex: isSelected ? 20 : 10,
+                }}
+                transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                className={`cursor-pointer rounded-xl shadow-md flex flex-col items-center justify-center text-center p-4 select-none
+                  ${darkMode ? 'bg-black text-white' : 'bg-white text-primary'}
+                  ${isSelected ? 'ring-4 ring-green-400' : ''}
+                  `}
+                style={{
+                  gridArea: bubble.id,
+                  width: isSelected ? '16rem' : undefined,
+                  height: isSelected ? 'auto' : undefined,
+                  minWidth: isSelected ? '16rem' : undefined,
+                  minHeight: isSelected ? '16rem' : undefined,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  overflow: 'hidden',
                 }}
               >
-                <div className="absolute inset-0 rounded-full blur-sm bg-white/5 dark:bg-white/5 z-[-1]" />
-                <span role="img" aria-label={bubble.label} className="text-4xl relative z-10">
+                <motion.span
+                  role="img"
+                  aria-label={bubble.label}
+                  className="text-5xl mb-2"
+                  layout="position"
+                >
                   {bubble.icon}
-                </span>
+                </motion.span>
+                <motion.h3
+                  className={`font-semibold mb-2 ${darkMode ? 'text-lightRoyal' : 'text-royal'}`}
+                  layout="position"
+                >
+                  {bubble.label}
+                </motion.h3>
+                {isSelected && (
+                  <motion.p
+                    className="text-sm"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    {bubble.description}
+                  </motion.p>
+                )}
               </motion.div>
             );
           })}
@@ -90,9 +109,6 @@ export default function AboutMeConstellation() {
 
       {/* Mobile Fallback: Stacked bubbles */}
       <div className="md:hidden mt-8 w-full max-w-sm space-y-4">
-        <h2 className={"text-2xl font-bold text-center mb-4" + (darkMode ? " text-lightRoyal" : " text-royal")}>
-          About me
-        </h2>
         {bubbles.map((bubble, index) => {
           const isActive = selected === bubble.id;
           return (
