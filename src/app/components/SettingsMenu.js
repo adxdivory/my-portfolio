@@ -75,9 +75,9 @@ export default function SettingsMenu() {
                 className="cursor-pointer opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
                 {darkMode ? (
-                  <Moon className="h-6 w-6 text-white" />
+                  <Sun className="h-6 w-6 text-white" />
                 ) : (
-                  <Sun className="h-6 w-6 text-black" />
+                  <Moon className="h-6 w-6 text-black" />
                 )}
             </div>
         </div>
