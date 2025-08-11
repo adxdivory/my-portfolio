@@ -3,80 +3,80 @@
     "id": 1,
     "title": "Portfolio Website Design (Development in progress)",
     "company": "Personal Project",
-    "image": "/images/portfolio-website.png",
-    "tags": ["UI/UX", "React", "Brand Design", "UX Design"],
-    "date": "2024-10-01"
+    "image": "/assets/portfolio-website.png",
+    "tags": ["React",  "UX Design", "Motion", "Web App", "Responsive"],
+    "date": "2025-03-01"
     },
     {
     "id": 2,
     "title": "Number Cruncher",
     "company": "Intuit, Inc.",
-    "image": "/images/number-cruncher.png",
-    "tags": ["UI/UX", "UX Research", "TypeScript", "Figma Plugin API"],
+    "image": "/assets/number-cruncher.png",
+    "tags": [ "User Research", "TypeScript", "Plugin"],
     "date": "2023-11-15"
     },
     {
     "id": 3,
     "title": "Design System Linter (Figma Plugin)",
     "company": "Intuit, Inc.",
-    "image": "/images/design-system-linter.png",
-    "tags": ["Figma Plugin API", "TypeScript", "UX Design", "UX Research"],
-    "date": "2023-10-20"
+    "image": "/assets/design-system-linter.png",
+    "tags": [ "TypeScript", "UX Design", "User Research", "Plugin"],
+    "date": "2024-06-20"
     },
     {
     "id": 4,
-    "title": "E2E Customer Journey",
+    "title": "E2E Customer Journey Tool",
     "company": "Intuit, Inc.",
-    "image": "/images/e2e-customer-journey.png",
-    "tags": ["React", "UI/UX", "UX Research", "Motion"],
-    "date": "2023-09-05"
+    "image": "/assets/e2e-customer-journey.png",
+    "tags": ["React", "User Research", "Motion", "Web App", "Responsive"],
+    "date": "2022-09-05"
     },
     {
     "id": 5,
     "title": "Snowglobe (Motion Work)",
     "company": "Intuit, Inc.",
-    "image": "/images/snowglobe.png",
-    "tags": ["UI/UX", "Product Design", "Motion", "React"],
+    "image": "/assets/snowglobe.png",
+    "tags": [ "UX Design", "Motion", "React", "Web App"],
     "date": "2023-06-20"
     },
     {
     "id": 6,
     "title": "Mid-Marketing Prototype",
     "company": "Intuit, Inc.",
-    "image": "/images/mid-marketing.png",
-    "tags": ["UI/UX", "User Testing", "Market Research", "React", "Motion"],
+    "image": "/assets/mid-marketing.png",
+    "tags": ["User Research", "React", "Motion", "Web App", "Responsive"],
     "date": "2023-07-10"
     },
     {
     "id": 7,
     "title": "Entity Linking Prototypes",
     "company": "Intuit, Inc.",
-    "image": "/images/entity-linking.png",
-    "tags": ["UX Research", "User Testing", "React", "AI"],
-    "date": "2023-05-30"
+    "image": "/assets/entity-linking.png",
+    "tags": ["User Research", "React", "AI", "Web App", "Responsive"],
+    "date": "2023-11-30"
     },
     {
     "id": 8,
     "title": "Gen AI + Neurodivergence",
     "company": "Intuit, Inc.",
-    "image": "/images/genai-neurodivergence.png",
-    "tags": ["AI", "Neurodivergence", "Generative AI", "Knowledge Share"],
+    "image": "/assets/genai-neurodivergence.png",
+    "tags": ["AI"],
     "date": "2023-08-15"
     },
-  {
+  { 
     "id": 9,
     "title": "Swimr",
     "company": "Personal Project",
-    "image": "/images/swimr.png",
-    "tags": ["UI/UX", "Product Design", "React", "AI"],
-    "date": "2024-09-01"
+    "image": "/assets/swimr.png",
+    "tags": ["UX Design", "React", "AI", "iOS"],
+    "date": "2025-05-01"
   },
-  {
+  { 
     "id": 10,
-    "title": "Lattice Design System",
-    "company": "Personal Project",
-    "image": "/images/lattice-design-system.png",
-    "tags": ["Design System", "UI/UX", "React", "Storybook"],
-    "date": "2024-08-15"
+    "title": "Business Barometer Prototype",
+    "company": "Intuit, Inc.",
+    "image": "/assets/business-barometer.png",
+    "tags": ["UX Design", "React", "Motion", "Web App"],
+    "date": "2023-07-01"
   }
 ]

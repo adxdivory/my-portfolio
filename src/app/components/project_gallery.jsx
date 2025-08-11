@@ -101,18 +101,16 @@ export default function ProjectGallery() {
               {{
                 'React': '⚛️',
                 'UX Design': '🎨',
-                'UI/UX': '🖌️',
-                'User Testing': '🧪',
+                'User Research': '🧪',
                 'TypeScript': '🔠',
                 'Figma': '📐',
-                'Web Design': '🖥️',
+                'Web App': '🖥️',
+                'Plugin': '🛠️',
                 '3D': '🌀',
                 'AI': '🤖',
                 'Motion': '🎞️',
-                'Market Research': '📊',
-                'iOS': '📱',
-                'Illustrator': '🖍️',
-                'Photoshop': '📸'
+                'iOS': '',
+                'Responsive': '📱'
               }[tag] || '🏷️'}
             </span>
             {tag}
