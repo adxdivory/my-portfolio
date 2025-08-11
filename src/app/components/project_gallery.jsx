@@ -1,47 +1,64 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import projectsData from '../data/projects.json';
 
 import { useSettings } from "../context/SettingsContext";
-
-const sampleProjects = [
-  {
-    id: 1,
-    title: 'Mid-Marketing Prototype',
-    company: 'Intuit, Inc.',
-    image: '/images/mid-marketing.png',
-    tags: ['UI/UX', 'User Testing', 'Market Research', 'React', 'Motion'],
-    date: '2023-07-10',
-  },
-  {
-    id: 2,
-    title: 'StudyStream',
-    company: 'UX/UI Design',
-    image: '/images/studystream.png',
-    tags: ['UX Design', 'Web Design'],
-    date: '2023-06-01',
-  },
-  {
-    id: 3,
-    title: 'Skanect App Redesign',
-    company: 'Sarah Lauchli, UX Designer',
-    image: '/images/skanect.png',
-    tags: ['3D', 'iOS', 'Figma', 'Illustrator', 'Photoshop'],
-    date: '2023-05-14',
-  },
-];
 
 export default function ProjectGallery() {
   const [projects, setProjects] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
+  const [isMdUp, setIsMdUp] = useState(false);
+  const [increment, setIncrement] = useState(3); // 3 for mobile, 6 for md+
+  const [visibleCount, setVisibleCount] = useState(3);
+
   const { darkMode, reduceMotion, toggleDarkMode, toggleReduceMotion } = useSettings();
 
   useEffect(() => {
-    setProjects(sampleProjects.sort((a, b) => new Date(b.date) - new Date(a.date)));
+    setProjects(projectsData.sort((a, b) => new Date(b.date) - new Date(a.date)));
   }, []);
 
-  const allTags = [...new Set(sampleProjects.flatMap(p => p.tags))];
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const mq = window.matchMedia('(min-width: 768px)'); // Tailwind md breakpoint
+    const apply = (matches) => {
+      setIsMdUp(matches);
+      const nextIncrement = matches ? 6 : 3;
+      setIncrement(nextIncrement);
+      setVisibleCount(nextIncrement);
+    };
+    // initial
+    apply(mq.matches);
+    // listener (with fallback for older browsers)
+    const handler = (e) => apply(e.matches);
+    if (mq.addEventListener) {
+      mq.addEventListener('change', handler);
+    } else if (mq.addListener) {
+      mq.addListener(handler);
+    }
+    return () => {
+      if (mq.removeEventListener) {
+        mq.removeEventListener('change', handler);
+      } else if (mq.removeListener) {
+        mq.removeListener(handler);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    setVisibleCount(increment);
+  }, [increment, selectedTags, searchTerm]);
+
+  const allTags = [...new Set(projectsData.flatMap(p => p.tags))]
+    .sort((a, b) => a.localeCompare(b))
+    .sort((a, b) => {
+      const aSelected = selectedTags.includes(a);
+      const bSelected = selectedTags.includes(b);
+      if (aSelected && !bSelected) return -1;
+      if (!aSelected && bSelected) return 1;
+      return 0;
+    });
 
   const toggleTag = (tag) => {
     setSelectedTags(prev => prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]);
@@ -54,6 +71,9 @@ export default function ProjectGallery() {
     return matchesTags && matchesSearch;
   });
 
+  const projectsToRender = filteredProjects.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredProjects.length;
+
   return (
     <div className="w-full px-6 md:px-12 py-10">
       <div className={`mb-6 p-4 rounded-lg text-center text-sm font-medium shadow-md ${darkMode ? 'bg-red-900 text-red-100' : 'bg-red-100 text-red-900'}`}>
@@ -62,9 +82,9 @@ export default function ProjectGallery() {
           www.tinyurl.com/ivoryswork
         </a>
       </div>
-      <h1 className="text-3xl md:text-4xl font-bold mb-6">Projects</h1>
+      <h1 className="text-2xl md:text-4xl font-bold mb-6">Projects<span className={darkMode ? ' text-lightVerde' : ' text-verde'}>.</span></h1>
 
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex gap-2 mb-4 overflow-x-auto whitespace-nowrap -mx-6 px-6 md:mx-0 md:px-0 md:flex-wrap md:whitespace-normal">
         <span className="font-medium">Filters:</span>
         {allTags.map(tag => (
           <button
@@ -112,7 +132,7 @@ export default function ProjectGallery() {
       />
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {filteredProjects.map(project => (
+        {projectsToRender.map(project => (
           <motion.div
             key={project.id}
             className={`rounded-xl overflow-hidden transition-transform duration-300
@@ -146,6 +166,17 @@ export default function ProjectGallery() {
           </motion.div>
         ))}
       </div>
+      {hasMore && (
+        <div className="mt-6 flex justify-center">
+          <button
+            onClick={() => setVisibleCount(prev => Math.min(prev + increment, filteredProjects.length))}
+            className={`px-4 py-2 rounded-md font-medium shadow-sm transition
+              ${darkMode ? 'bg-purple-900 text-purple-100 hover:bg-purple-800' : 'bg-purple-100 text-purple-900 hover:bg-purple-200'}`}
+          >
+            Show {Math.min(increment, filteredProjects.length - visibleCount)} more
+          </button>
+        </div>
+      )}
     </div>
   );
 }

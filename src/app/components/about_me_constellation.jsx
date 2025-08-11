@@ -22,16 +22,16 @@ export default function AboutMeConstellation() {
 
 
   return (
-    <div className="w-full flex flex-col items-center justify-center py-12 px-4">
+    <div className="w-full flex flex-col items-center justify-center py-10 px-4">
       {/* Title for large screens */}
       <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className={`text-2xl md:text-4xl font-bold mb-4  drop-shadow-lg dark:drop-shadow-md text-center ${darkMode ? 'text-primaryD' : 'text-primary'}`}
+              className={`text-2xl md:text-4xl font-bold  drop-shadow-lg dark:drop-shadow-md  ${darkMode ? 'text-primaryD' : 'text-primary'}`}
             >
-               About Me.
+               About me<span className={darkMode ? ' text-lightVerde' : ' text-verde'}>.</span>
             </motion.h2>
       {/* Floating Bubbles Container Wrapper */}
       <div className="relative w-full flex justify-center items-center">

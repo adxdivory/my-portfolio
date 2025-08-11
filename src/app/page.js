@@ -47,11 +47,11 @@ export default function Home() {
       <ExpandableMenu className={styles.menu} />
       <main className={styles.main + (darkMode ? ' text-primaryD':' text-primary')}>
         <section id="home" className={styles.sections + ' ' + styles.home + '  flex flex-col items-center mt-20 ' + (darkMode ? ' bg-black':' bg-white')}>
-          <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 px-6 md:px-10 pt-20 pb-10 text-left">
+          <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 px-6 pb-2 pt-5 md:px-10 md:pt-20 md:mt-20 md:pb-10  text-left">
             
             {/* Text Block */}
             <motion.div
-              className="flex-1 space-y-6"
+              className="flex-1"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
@@ -60,11 +60,11 @@ export default function Home() {
                 Hey, I'm Ivory
                 <span className={darkMode ? ' text-lightVerde' : ' text-verde'}>.</span>
               </div>
-              <div className="text-xl md:text-2xl lg:text-3xl bg-gradient-to-r from-purple-500 via-green-400 to-pink-500 bg-clip-text text-transparent">
-              Design Technologist
+              <div className="text-xl md:text-2xl lg:text-3xl bg-gradient-to-r from-purple-500 via-green-400 to-pink-500 bg-clip-text text-transparent mt-2 md:mt-6">
+              Software Engineer & UX Designer
               </div>
               {/* <AdxdIntro /> */}
-              <p className="text-sm md:text-base lg:text-lg max-w-xl">
+              <p className="text-sm md:text-base lg:text-lg max-w-xl mt-6">
                 I have 6+ years of experience crafting thoughtful systems, AI-powered tools, and inclusive interfaces. I specialize in UX engineering, design systems, motion design, and human-centered problem solving that scales with clarity—not complexity.
               </p>
             </motion.div>
@@ -85,7 +85,7 @@ export default function Home() {
 
           </div>
           {/* Tile Carousel Marquee */}
-          <div className="w-full mt-5 md:mt-10 lg:mt-32 pb-10 overflow-hidden">
+          <div className="w-full md:mt-10 lg:mt-32 pb-10 overflow-hidden">
             <motion.div
               className="flex gap-4 whitespace-nowrap w-max"
               animate={{ x: ["0%", "-50%"] }}
@@ -132,10 +132,18 @@ export default function Home() {
 
  
         
-        <section id="about" className={styles.sections + ' ' + styles.about + ' relative overflow-hidden bg-fixed bg-center bg-cover min-h-screen ' + (darkMode 
-  ? 'bg-[url("/assets/pattern-dark.svg")] bg-[#0a0a0a] bg-[length:80px_80px] sm:bg-[length:120px_120px] md:bg-[length:200px_200px] text-white'
-  : 'bg-[url("/assets/pattern-light.svg")] bg-[#f9f9f9] bg-[length:80px_80px] sm:bg-[length:120px_120px] md:bg-[length:200px_200px] text-black')}>
-          <div className="relative z-10 pt-10 md:pt-12 w-full text-white text-center">
+        <section id="about" className={
+          styles.sections +
+          ' ' +
+          styles.about +
+          ' relative overflow-hidden min-h-screen ' +
+          (
+            darkMode
+              ? 'bg-gradient-to-b from-[#150a26] to-[#2a1b40] text-white sm:bg-[url("/assets/pattern-dark.svg")] sm:bg-[#0a0a0a] sm:bg-fixed sm:bg-center sm:bg-cover sm:bg-[length:120px_120px] md:bg-[length:200px_200px]'
+              : 'bg-gradient-to-b from-[#ece0fa] to-[#d2b8f0] text-black sm:bg-[url("/assets/pattern-light.svg")] sm:bg-[#f9f9f9] sm:bg-fixed sm:bg-center sm:bg-cover sm:bg-[length:120px_120px] md:bg-[length:200px_200px]'
+          )
+        }>
+          <div className="relative z-10 md:pt-12 w-full text-white text-center">
             <AboutMeConstellation />
           </div>
         </section>
@@ -144,12 +152,20 @@ export default function Home() {
           <ProjectGallery/>
         </section> 
 
-        <section id="contact" className={styles.sections + ' ' + styles.contact + ' relative overflow-hidden bg-fixed bg-center bg-cover min-h-screen flex items-center justify-center ' + (darkMode 
-  ? 'bg-[url("/assets/pattern-dark.svg")] bg-[#0a0a0a] bg-[length:80px_80px] sm:bg-[length:120px_120px] md:bg-[length:200px_200px] text-white'
-  : 'bg-[url("/assets/pattern-light.svg")] bg-[#f9f9f9] bg-[length:80px_80px] sm:bg-[length:120px_120px] md:bg-[length:200px_200px] text-black')}>
+        <section id="contact" className={
+          styles.sections +
+          ' ' +
+          styles.contact +
+          ' relative overflow-hidden bg-center bg-cover min-h-screen flex items-center justify-center ' +
+          (
+            darkMode
+              ? 'bg-gradient-to-b from-[#150a26] to-[#2a1b40] text-white sm:bg-[url("/assets/pattern-dark.svg")] sm:bg-[#0a0a0a] sm:bg-fixed sm:bg-[length:80px_80px] sm:text-white md:bg-[length:200px_200px]'
+              : 'bg-gradient-to-b from-[#ece0fa] to-[#d2b8f0] text-black sm:bg-[url("/assets/pattern-light.svg")] sm:bg-[#f9f9f9] sm:bg-fixed sm:bg-[length:80px_80px] sm:text-black md:bg-[length:200px_200px]'
+          )
+        }>
           <div className={"relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 max-w-md sm:max-w-3xl rounded-xl shadow-lg " + (darkMode ? " bg-black" : " bg-white")}>
             
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-purple-500 via-green-400 to-pink-500 bg-clip-text text-transparent relative z-10">
+            <h2 className="text-2xl md:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-purple-500 via-green-400 to-pink-500 bg-clip-text text-transparent relative z-10">
               Let's connect!
             </h2>
             <p className="text-sm md:text-base text-center mb-6 relative z-10">
